@@ -1,6 +1,6 @@
-use super::scalar::Scalar;
+use super::num::Num;
 
-pub trait Vector<T: Scalar>: Sized + Copy + Clone {
+pub trait Vector<T: Num>: Sized + Copy + Clone {
     const ZERO: Self;
     const ONE: Self;
 
@@ -35,7 +35,7 @@ pub trait Vector<T: Scalar>: Sized + Copy + Clone {
     }
 }
 
-pub trait Vector2<T: Scalar>: Vector<T> {
+pub trait Vector2<T: Num>: Vector<T> {
     const X: Self;
     const Y: Self;
 
@@ -53,7 +53,7 @@ pub trait Vector2<T: Scalar>: Vector<T> {
     }
 }
 
-pub trait Vector3<T: Scalar>: Vector<T> {
+pub trait Vector3<T: Num>: Vector<T> {
     const X: Self;
     const Y: Self;
     const Z: Self;
@@ -77,7 +77,7 @@ pub trait Vector3<T: Scalar>: Vector<T> {
     }
 }
 
-pub trait Vector4<T: Scalar>: Vector<T> {
+pub trait Vector4<T: Num>: Vector<T> {
     const X: Self;
     const Y: Self;
     const Z: Self;
@@ -106,3 +106,4 @@ pub trait Vector4<T: Scalar>: Vector<T> {
         Self::splat(self.w())
     }
 }
+
